@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+	<displayName>Session Manager</displayName>
+	<shortDescription>This package is used to manage sessions. It provides a DefaultSessionManager class that you 
+	can use to configure your PHP sessions, and a SessionManagerInterface that you can implement if you
+	want to provide your own session management.</shortDescription>
+	<docUrl></docUrl>
+	<doc>
+		<page title="Using the session manager" url="index.html" />
+	</doc>
+	<logo>logo.png</logo>
+	<requires>
+		<require>SessionManagerInterface.php</require>
+		<require>DefaultSessionManager.php</require>
+	</requires>
+	<install>
+		<file>install.php</file>
+	</install>
+</package>
