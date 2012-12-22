@@ -16,5 +16,5 @@ if (!$moufManager->instanceExists("sessionManager")) {
 $moufManager->rewriteMouf();
 
 // Finally, let's continue the install
-InstallUtils::continueInstall();
+InstallUtils::continueInstall(isset($_REQUEST['selfedit']) && $_REQUEST['selfedit'] == 'true');
 ?>
