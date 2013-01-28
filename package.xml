@@ -8,6 +8,7 @@
 	<doc>
 		<page title="Using the session manager" url="index.html" />
 	</doc>
+
 	<logo>logo.png</logo>
 	<requires>
 		<require>SessionManagerInterface.php</require>
