@@ -1,5 +1,5 @@
 <?php
-namespace Mouf\Utils\Sesssion\SessionManager;
+namespace Mouf\Utils\Session\SessionManager;
 
 /**
  * Classes implementing this interface can manage a PHP session.
