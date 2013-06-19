@@ -1,5 +1,5 @@
 <?php
-namespace Mouf\Utils\Sesssion\SessionManager;
+namespace Mouf\Utils\Session\SessionManager;
 
 /**
  * This class is the default manager for PHP sessions.
