@@ -20,17 +20,17 @@ As a bonus, the SessionManager offers a lot of settings for managing your sessio
 <p>Just enable the package in your project. When the package is enabled, you have a <em>sessionManager</em> instance create.</p>
 
 <p>To start a session, use:</p>
-<pre>Mouf::getSessionManager()-gt;start();</pre>
+<pre>Mouf::getSessionManager()->start();</pre>
 
 <p>To write and close a session, use:</p>
-<pre>Mouf::getSessionManager()-gt;write_close();</pre>
+<pre>Mouf::getSessionManager()->write_close();</pre>
 
 <p>To destroy a session, use:</p>
-<pre>Mouf::getSessionManager()-gt;destroy();</pre>
+<pre>Mouf::getSessionManager()->destroy();</pre>
 
 <h2>The DefaultSessionManager class</h2>
 
 <p>The DefaultSessionManager uses the standard PHP mechanism to track sessions. It offers a number of parameters to configure
 the lifetime of a session, the path where session files are stored...</p>
 
-<img src="defaultsessionmanager.png" alt="DefaultSessionManager" />
+<img src="https://raw.github.com/thecodingmachine/utils.session.session-manager/2.1/doc/defaultsessionmanager.png" alt="DefaultSessionManager" />
