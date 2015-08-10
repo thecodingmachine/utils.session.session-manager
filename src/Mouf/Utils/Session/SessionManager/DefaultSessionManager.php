@@ -89,6 +89,14 @@ class DefaultSessionManager implements SessionManagerInterface {
 	public $cookieHttpOnly = false;
 	
 	/**
+	 * Set the session handler.
+	 *
+	 * @Property
+	 * @var \SessionHandlerInterface
+	 */
+	public $sessionHandler;
+	
+	/**
 	 * Starts the session.
 	 *
 	 * @see session_start
@@ -99,6 +107,10 @@ class DefaultSessionManager implements SessionManagerInterface {
 			return false;
 		}
 		
+		if (!empty($this->sessionHandler)) {
+			session_set_save_handler($this->sessionHandler, true);
+		}
+
 		if (!empty($this->cookieName)) {
 			session_name($this->cookieName);
 		}
