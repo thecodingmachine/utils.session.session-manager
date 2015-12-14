@@ -22,7 +22,7 @@
         }
     },
     "suggest": {
-        "thecodingmachine/utils.session.optimistic-session-handler": "Handle session without locking session file during all the PHP script execution"
+        "mouf/utils.session.optimistic-session-handler": "Session handler that releases session lock quickly. Usefull for multiple ajax calls on the same page."
     },
     "extra": {
 	     "mouf": {
