@@ -28,6 +28,9 @@ As a bonus, the SessionManager offers a lot of settings for managing your sessio
 <p>To destroy a session, use:</p>
 <pre>Mouf::getSessionManager()->destroy();</pre>
 
+<p>To regenerate a session id, use:</p>
+<pre>Mouf::getSessionManager()->regenerateId();</pre>
+
 <h2>The DefaultSessionManager class</h2>
 
 <p>The DefaultSessionManager uses the standard PHP mechanism to track sessions. It offers a number of parameters to configure
