@@ -14,7 +14,6 @@ interface SessionManagerInterface {
 	 * Starts the session.
 	 * 
 	 * @see session_start
-	 * @return bool
 	 */
 	public function start();
 	
@@ -29,7 +28,13 @@ interface SessionManagerInterface {
 	 * Destroys the session
 	 * 
 	 * @see session_destroy
-	 * @return bool
 	 */
 	public function destroy();
+
+    /**
+     * Update the current session id with a newly generated one.
+     *
+     * @param bool $deleteOldSession Whether to delete the old associated session file or not. You should not delete old session if you need to avoid races caused by deletion or detect/avoid session hijack attacks.
+     */
+	public function regenerateId($deleteOldSession = false);
 }
