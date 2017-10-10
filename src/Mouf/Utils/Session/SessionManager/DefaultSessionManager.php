@@ -107,6 +107,11 @@ class DefaultSessionManager implements SessionManagerInterface
         if (isset($_SESSION)) {
             return false;
         }
+
+        if (php_sapi_name() === "cli") {
+            // Let's ignore session if we are in CLI
+            return;
+        }
         
         if (!empty($this->sessionHandler)) {
             session_set_save_handler($this->sessionHandler, true);
@@ -148,6 +153,11 @@ class DefaultSessionManager implements SessionManagerInterface
      */
     public function write_close()
     {
+        if (php_sapi_name() === "cli") {
+            // Let's ignore session if we are in CLI
+            return;
+        }
+
         session_write_close();
     }
     
@@ -158,6 +168,11 @@ class DefaultSessionManager implements SessionManagerInterface
      */
     public function destroy()
     {
+        if (php_sapi_name() === "cli") {
+            // Let's ignore session if we are in CLI
+            return;
+        }
+
         $result = session_destroy();
         if ($result === false) {
             throw new SessionManagerException('Failed to destroy the session.');
@@ -171,6 +186,11 @@ class DefaultSessionManager implements SessionManagerInterface
      */
     public function regenerateId($deleteOldSession = false)
     {
+        if (php_sapi_name() === "cli") {
+            // Let's ignore session if we are in CLI
+            return;
+        }
+
         $result = session_regenerate_id($deleteOldSession);
         if ($result === false) {
             throw new SessionManagerException('Failed to regenerate session ID.');
