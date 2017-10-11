@@ -108,7 +108,7 @@ class DefaultSessionManager implements SessionManagerInterface
             return false;
         }
 
-        if (php_sapi_name() === "cli") {
+        if (in_array(php_sapi_name(), ['cli', 'phpdbg'], true)) {
             // Let's ignore session if we are in CLI
             return;
         }
@@ -153,7 +153,7 @@ class DefaultSessionManager implements SessionManagerInterface
      */
     public function write_close()
     {
-        if (php_sapi_name() === "cli") {
+        if (in_array(php_sapi_name(), ['cli', 'phpdbg'], true)) {
             // Let's ignore session if we are in CLI
             return;
         }
@@ -168,7 +168,7 @@ class DefaultSessionManager implements SessionManagerInterface
      */
     public function destroy()
     {
-        if (php_sapi_name() === "cli") {
+        if (in_array(php_sapi_name(), ['cli', 'phpdbg'], true)) {
             // Let's ignore session if we are in CLI
             return;
         }
@@ -186,7 +186,7 @@ class DefaultSessionManager implements SessionManagerInterface
      */
     public function regenerateId($deleteOldSession = false)
     {
-        if (php_sapi_name() === "cli") {
+        if (in_array(php_sapi_name(), ['cli', 'phpdbg'], true)) {
             // Let's ignore session if we are in CLI
             return;
         }
