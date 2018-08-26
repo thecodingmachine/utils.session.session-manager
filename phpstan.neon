@@ -1,0 +1,6 @@
+parameters:
+    ignoreErrors:
+     - "#you should not use the \\$_SESSION superglobal#"
+     - "#Variable \\$_SESSION in isset\\(\\) always exists and is not nullable.#"
+includes:
+    - vendor/thecodingmachine/phpstan-strict-rules/phpstan-strict-rules.neon

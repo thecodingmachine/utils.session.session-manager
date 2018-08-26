@@ -25,13 +25,13 @@ class SessionAssign implements ActionInterface
      * @Important $value
      * @param string|ValueInterface $key
      * @param ValueInterface|string $value
-     * @param SessionManagerInterface $sesssionManagerInterface
+     * @param SessionManagerInterface $sessionManager
      */
-    public function __construct($key, $value, SessionManagerInterface $sessionManagerInterface = null)
+    public function __construct($key, $value, SessionManagerInterface $sessionManager = null)
     {
         $this->key = $key;
         $this->value = $value;
-        $this->sessionManagerInterface = $sessionManagerInterface;
+        $this->sessionManagerInterface = $sessionManager;
     }
     
     /**
@@ -43,7 +43,7 @@ class SessionAssign implements ActionInterface
             $this->sessionManagerInterface->start();
         }
         if (!isset($_SESSION)) {
-            throw new MoufException('Session must be initialized when calling SessionAssign action');
+            throw new \LogicException('Session must be initialized when calling SessionAssign action');
         }
         $_SESSION[ValueUtils::val($this->key)] = ValueUtils::val($this->value);
     }
