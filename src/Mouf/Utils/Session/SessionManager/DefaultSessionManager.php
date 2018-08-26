@@ -102,10 +102,10 @@ class DefaultSessionManager implements SessionManagerInterface
      *
      * @see session_start
      */
-    public function start()
+    public function start(): void
     {
         if (isset($_SESSION)) {
-            return false;
+            return;
         }
 
         if (in_array(php_sapi_name(), ['cli', 'phpdbg'], true)) {
@@ -151,7 +151,7 @@ class DefaultSessionManager implements SessionManagerInterface
      *
      * @see session_write_close
      */
-    public function write_close()
+    public function writeClose(): void
     {
         if (in_array(php_sapi_name(), ['cli', 'phpdbg'], true)) {
             // Let's ignore session if we are in CLI
@@ -166,7 +166,7 @@ class DefaultSessionManager implements SessionManagerInterface
      *
      * @see session_destroy
      */
-    public function destroy()
+    public function destroy(): void
     {
         if (in_array(php_sapi_name(), ['cli', 'phpdbg'], true)) {
             // Let's ignore session if we are in CLI
@@ -184,7 +184,7 @@ class DefaultSessionManager implements SessionManagerInterface
      *
      * @param bool $deleteOldSession Whether to delete the old associated session file or not. You should not delete old session if you need to avoid races caused by deletion or detect/avoid session hijack attacks.
      */
-    public function regenerateId($deleteOldSession = false)
+    public function regenerateId(bool $deleteOldSession = false): void
     {
         if (in_array(php_sapi_name(), ['cli', 'phpdbg'], true)) {
             // Let's ignore session if we are in CLI

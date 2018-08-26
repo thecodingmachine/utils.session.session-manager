@@ -1,0 +1,3 @@
+{
+  "Interop\\Container\\ServiceProviderInterface": "Mouf\\Utils\\Session\\SessionManager\\SessionManagerServiceProvider"
+}
